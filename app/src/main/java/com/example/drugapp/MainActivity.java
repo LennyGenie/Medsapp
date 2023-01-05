@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     TextView tv ;
-    Button add ;
+    Button add ,overview ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +21,19 @@ public class MainActivity extends AppCompatActivity {
     protected void initViews(){
         tv = (TextView) findViewById(R.id.textView_hello);
         add = (Button) findViewById(R.id.button_add);
+        overview = (Button)findViewById(R.id.button_Overwiew) ;
         add.setOnClickListener(View->onAddButton());
+        overview.setOnClickListener(View->onOverviewButton());
+
     }
 
     protected void onAddButton(){
-        Intent intentToAddActivity = new Intent(this,AddActivity.class );
-        startActivity(intentToAddActivity);
+        Intent toAddActivity = new Intent(this,AddActivity.class );
+        startActivity(toAddActivity);
+    }
+
+    protected void onOverviewButton(){
+        Intent toOverviewActivity = new Intent(this,OverviewActivity.class);
+        startActivity(toOverviewActivity);
     }
 }
