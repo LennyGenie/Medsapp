@@ -21,7 +21,7 @@ public class AddActivity extends AppCompatActivity {
     public static final String FREQUENCY = "med_frequency";
 
     // Edittexte und Button Elemente und speicherobject
-    EditText medName ,medAmount,  medFrequency ;
+    EditText etName ,etAmount,  etFrequency ;
     Button save , back ;
     SharedPreferences sharedPreferences ;
 
@@ -34,9 +34,9 @@ public class AddActivity extends AppCompatActivity {
 
     protected void initViews(){
         // Die Verbindung zichen Jave und xml
-        medName = (EditText) findViewById(R.id.med_name);
-        medAmount =(EditText) findViewById(R.id.med_amount);
-        medFrequency = (EditText) findViewById(R.id.med_freqency);
+        etName = (EditText) findViewById(R.id.med_name);
+        etAmount =(EditText) findViewById(R.id.med_amount);
+        etFrequency = (EditText) findViewById(R.id.med_freqency);
         save = (Button)findViewById(R.id.button_save);
         back = (Button)findViewById(R.id.button_back);
 
@@ -49,18 +49,22 @@ public class AddActivity extends AppCompatActivity {
     }
 
     protected void onSaveButton(){
-        // to do daten speichen erstmal probieren mit sharedpereference und nicht sqlite
-        // text aus edittexte Elemnte empfangen und speichern in Variablen
-        String name = medName.getText().toString();
-        String amount = medAmount.getText().toString();
-        String frequency = medFrequency.getText().toString();
-
+        // to do: daten speichen erstmal probieren mit sharedpereference und nicht SQlite
+        // text aus Edittexte Elemnte empfangen und speichern in  lokalen Variablen
+        String name = etName.getText().toString();
+        String amount = etAmount.getText().toString();
+        String frequency = etFrequency.getText().toString();
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
+        //  In editor Objecte Werte gespeichert
         editor.putString(NAME, name);
         editor.putString(AMOUNT, amount);
         editor.putString(FREQUENCY , frequency);
-        editor.commit();
+        //editor.putInt(AMOUNT, Integer.parseInt(amount));
+        //editor.putInt(FREQUENCY, Integer.parseInt(frequency));
+        editor.commit(); // gespeichert
+        Intent toOverview = new Intent (this, OverviewActivity.class);
+        startActivity(toOverview);
         // Zur Veranschalichung : Nahcrict wird gezeigt wenn on save Button gecklickt wird.
         Toast.makeText(AddActivity.this, "Danke , Daten werden gespeichert ", Toast.LENGTH_SHORT).show();
 

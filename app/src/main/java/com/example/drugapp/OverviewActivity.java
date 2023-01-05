@@ -1,13 +1,27 @@
 package com.example.drugapp;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
+
 
 public class OverviewActivity extends AppCompatActivity {
-    RecyclerView datenList ;
+    // keys als Konstanten initialiseren
+    public static final String MYPEREFERENCES = "myprefs";
+    public static final String NAME = "med_name";
+    public static final String AMOUNT = "med_amount";
+    public static final String FREQUENCY = "med_frequency";
+
+    // TextViews initialiseren
+    TextView tvIndex , tvName , tvAmount ,tvFrequency;
+
+    // shredpereference object
+    SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +30,29 @@ public class OverviewActivity extends AppCompatActivity {
     }
 
     protected void initViews(){
-        datenList =(RecyclerView) findViewById(R.id.daten_list);
+        // Verbindung zwichen Java und xml
+        tvIndex =(TextView)findViewById(R.id.row_number);
+        tvName=(TextView)findViewById(R.id.med_name) ;
+        tvAmount = (TextView)findViewById(R.id.med_amount);
+        tvFrequency = (TextView)findViewById(R.id.med_freqency);
+
+        // sharedpereference und scharedpereference editor
+        sharedPreferences = getSharedPreferences(MYPEREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        // Daten empfangen aus dem scharepereference und speichern in lokalen Variablen
+        int index = 1;
+        String name = sharedPreferences.getString(NAME, null);
+        int amount = sharedPreferences.getInt(AMOUNT, 0);
+        int frequency = sharedPreferences.getInt(FREQUENCY, 0);
+
+        // Daten nach dem Ablesen in Textviews anzeigen
+        if(name !=null && amount != 0 && frequency !=0 ){
+            tvIndex.setText(index);
+            tvName.setText(name);
+            tvAmount.setText(amount);
+            tvFrequency.setText(frequency);
+        }
+
     }
 }
