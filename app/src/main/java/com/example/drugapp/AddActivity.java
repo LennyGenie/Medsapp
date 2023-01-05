@@ -61,7 +61,7 @@ public class AddActivity extends AppCompatActivity {
         editor.putString(AMOUNT, amount);
         editor.putString(FREQUENCY , frequency);
         editor.commit();
-        // Zur Veranschalichung : Nahcrict wird gezeigt wenn on add Button gecklickt wird.
+        // Zur Veranschalichung : Nahcrict wird gezeigt wenn on save Button gecklickt wird.
         Toast.makeText(AddActivity.this, "Danke , Daten werden gespeichert ", Toast.LENGTH_SHORT).show();
 
 
