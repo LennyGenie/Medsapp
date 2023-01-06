@@ -51,6 +51,8 @@ public class AddActivity extends AppCompatActivity {
     protected void onSaveButton(){
         // to do: daten speichen erstmal probieren mit sharedpereference und nicht SQlite
         // text aus Edittexte Elemnte empfangen und speichern in  lokalen Variablen
+
+
         String name = etName.getText().toString();
         String amount = etAmount.getText().toString();
         String frequency = etFrequency.getText().toString();
@@ -63,10 +65,8 @@ public class AddActivity extends AppCompatActivity {
         //editor.putInt(AMOUNT, Integer.parseInt(amount));
         //editor.putInt(FREQUENCY, Integer.parseInt(frequency));
         editor.commit(); // gespeichert
-        Intent toOverview = new Intent (this, OverviewActivity.class);
-        startActivity(toOverview);
         // Zur Veranschalichung : Nahcrict wird gezeigt wenn on save Button gecklickt wird.
-        Toast.makeText(AddActivity.this, "Danke , Daten werden gespeichert ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(AddActivity.this, "Danke , Daten werden in overwiew gespeichert ", Toast.LENGTH_SHORT).show();
 
 
 
