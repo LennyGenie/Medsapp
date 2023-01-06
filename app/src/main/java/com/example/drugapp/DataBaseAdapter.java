@@ -115,10 +115,10 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
     }
 
     // Deleting single contact
-    public void deleteContact(Contact contact) {
+    public void deleteMedData(MedData medData) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_MEDDATA, KEY_ID + " = ?",
-                new String[] { String.valueOf(contact.getID()) });
+                new String[] { String.valueOf(medData.getID()) });
         db.close();
     }
 
