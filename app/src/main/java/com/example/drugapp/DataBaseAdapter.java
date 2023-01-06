@@ -103,7 +103,7 @@ public class DataBaseAdapter extends SQLiteOpenHelper {
 
     //*************************************************//
     // code to update the single contact
-    public int updateContact(MedData medData) {
+    public int updateMedData(MedData medData) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();

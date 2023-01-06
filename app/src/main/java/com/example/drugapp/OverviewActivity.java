@@ -41,14 +41,17 @@ public class OverviewActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         // Daten empfangen aus dem scharepereference und speichern in lokalen Variablen
-        int index = 1;
-        String name = sharedPreferences.getString(NAME, null);
-        int amount = sharedPreferences.getInt(AMOUNT, 0);
-        int frequency = sharedPreferences.getInt(FREQUENCY, 0);
+        //int index = 1;
+
+        // data object:
+
+        String name = sharedPreferences.getString(NAME, "");
+        String  amount = sharedPreferences.getString(AMOUNT, "");
+        String frequency = sharedPreferences.getString(FREQUENCY, "");
 
         // Daten nach dem Ablesen in Textviews anzeigen
-        if(name !=null && amount != 0 && frequency !=0 ){
-            tvIndex.setText(index);
+        if(name !=null && amount != "" && frequency !="" ){
+           // tvIndex.setText(index);
             tvName.setText(name);
             tvAmount.setText(amount);
             tvFrequency.setText(frequency);

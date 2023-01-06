@@ -8,24 +8,38 @@
     android:padding="20dp">
 
     <TextView
-        android:id="@+id/hello"
+        android:id="@+id/textView_hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello"
+        android:layout_alignParentTop="true"
+        android:text="Hello!"
         android:textSize="40sp"
         android:textStyle="italic"
+        android:textColor="#A61515"
         android:layout_centerHorizontal="true"
         />
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/button_add"
+        android:layout_width="205dp"
         android:layout_height="wrap_content"
-        android:text="ADD"
-        android:textStyle="normal"
-        android:textSize="30dp"
-        android:layout_below="@+id/hello"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
+        android:text="ADD"
+        android:textSize="30dp"
+        android:textStyle="normal"
+
+        />
+    <Button
+        android:id="@+id/button_Overwiew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_add"
+        android:text="Overview"
+        android:textStyle="normal"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
 
         />
 
