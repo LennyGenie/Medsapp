@@ -49,24 +49,39 @@ public class AddActivity extends AppCompatActivity {
     }
 
     protected void onSaveButton(){
-        // to do: daten speichen erstmal probieren mit sharedpereference und nicht SQlite
-        // text aus Edittexte Elemnte empfangen und speichern in  lokalen Variablen
+            // to do: daten speichen erstmal probieren mit sharedpereference und nicht SQlite
+            // text aus Edittexte Elemnte empfangen und speichern in  lokalen Variablen
 
 
-        String name = etName.getText().toString();
-        String amount = etAmount.getText().toString();
-        String frequency = etFrequency.getText().toString();
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+            //String name = etName.getText().toString();
+            //String amount = etAmount.getText().toString();
+            //String frequency = etFrequency.getText().toString();
+            //SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        //  In editor Objecte Werte gespeichert
-        editor.putString(NAME, name);
-        editor.putString(AMOUNT, amount);
-        editor.putString(FREQUENCY , frequency);
-        //editor.putInt(AMOUNT, Integer.parseInt(amount));
-        //editor.putInt(FREQUENCY, Integer.parseInt(frequency));
-        editor.commit(); // gespeichert
-        // Zur Veranschalichung : Nahcrict wird gezeigt wenn on save Button gecklickt wird.
-        Toast.makeText(AddActivity.this, "Danke , Daten werden in overwiew gespeichert ", Toast.LENGTH_SHORT).show();
+            //  In editor Objecte Werte gespeichert
+            //editor.putString(NAME, name);
+            //editor.putString(AMOUNT, amount);
+            //editor.putString(FREQUENCY , frequency);
+            //editor.putInt(AMOUNT, Integer.parseInt(amount));
+            //editor.putInt(FREQUENCY, Integer.parseInt(frequency));
+            //editor.commit(); // gespeichert
+            // Zur Veranschalichung : Nahcrict wird gezeigt wenn on save Button gecklickt wird.
+
+
+        // Object aus der Klasse MedData initialieren
+        MedData medData = null;
+        try{
+            medData= new MedData(etName.getText().toString(), Integer.parseInt(etAmount.getText().toString())
+                    , Integer.parseInt(etFrequency.getText().toString()));
+            Toast.makeText(AddActivity.this,  medData.toString(), Toast.LENGTH_SHORT).show();
+        }
+        catch(Exception e){
+            Toast.makeText(AddActivity.this, "Error ", Toast.LENGTH_SHORT).show();
+        }
+        DataBaseAdapter dataBaseAdapter = new DataBaseAdapter(this);
+        dataBaseAdapter.addOne(medData);
+
+
 
 
 
