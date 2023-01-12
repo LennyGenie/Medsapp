@@ -57,7 +57,7 @@ class DataBaceHelper extends SQLiteOpenHelper{
 
     public boolean deleteOne(MedData clickedMedData){
         SQLiteDatabase db = this.getWritableDatabase();
-        String queryString = "DELETE FROM " + MEDDATA_TABLE + "WHERE" + COLUMN_ID + " = " +clickedMedData.getId();
+        String queryString = "DELETE FROM " + MEDDATA_TABLE + " WHERE " + COLUMN_ID + " = " +clickedMedData.getId();
         Cursor cursor = db.rawQuery(queryString, null);
         if(cursor.moveToFirst()){
             return true ;
