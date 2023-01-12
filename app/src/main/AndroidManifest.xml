@@ -26,13 +26,6 @@
                 android:value="" />
         </activity>
 
-        <activity android:name=".AddActivity"/>
-
-        <activity android:name=".OverviewActivity"/>
-
-
-
-
 
     </application>
 

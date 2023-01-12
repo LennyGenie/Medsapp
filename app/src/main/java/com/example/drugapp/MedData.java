@@ -3,16 +3,23 @@ package com.example.drugapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MedData {
-     private String name ;
-     private int amount , frequency ;
+    private int id;
+    private String name ;
+    private int amount ;
+    private int frequency ;
 
     public MedData() {
     }
 
-    public MedData(String name, int amount, int frequency) {
+    public MedData(int id, String name, int amount, int frequency) {
+        this.id = id;
         this.name = name;
         this.amount = amount;
         this.frequency = frequency;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setName(String name) {
@@ -25,6 +32,10 @@ public class MedData {
 
     public void setFrequency(int frequency) {
         this.frequency = frequency;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -42,7 +53,8 @@ public class MedData {
     @Override
     public String toString() {
         return "MedData{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", amount=" + amount +
                 ", frequency=" + frequency +
                 '}';
