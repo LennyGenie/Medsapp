@@ -28,9 +28,9 @@ class DataBaceHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-      String  createTableStatment = "CREATE TABLE " + MEDDATA_TABLE + "  (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-              COLUMN_MEDDATA_NAME + " TEXT , " + COLUMN_MEDDATA_AMOUNT + " INT , " + COLUMN_MEDDATA_FREQUENCY + " INT)";
-      db.execSQL(createTableStatment);
+        String  createTableStatment = "CREATE TABLE " + MEDDATA_TABLE + "  (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                COLUMN_MEDDATA_NAME + " TEXT , " + COLUMN_MEDDATA_AMOUNT + " INT , " + COLUMN_MEDDATA_FREQUENCY + " INT)";
+        db.execSQL(createTableStatment);
 
     }
 
@@ -57,7 +57,7 @@ class DataBaceHelper extends SQLiteOpenHelper{
 
     public boolean deleteOne(MedData clickedMedData){
         SQLiteDatabase db = this.getWritableDatabase();
-        String queryString = "DELETE FROM" + MEDDATA_TABLE + "WHERE" + COLUMN_ID + " = " +clickedMedData.getId();
+        String queryString = "DELETE FROM " + MEDDATA_TABLE + "WHERE" + COLUMN_ID + " = " +clickedMedData.getId();
         Cursor cursor = db.rawQuery(queryString, null);
         if(cursor.moveToFirst()){
             return true ;
@@ -71,7 +71,7 @@ class DataBaceHelper extends SQLiteOpenHelper{
 
     public List<MedData> getEvryone(){
         List<MedData> returnList = new ArrayList<>();
-        String queryString = "SELECT + FROM " + MEDDATA_TABLE ;
+        String queryString = "SELECT * FROM " + MEDDATA_TABLE ;
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.rawQuery(queryString,  null);
@@ -86,7 +86,7 @@ class DataBaceHelper extends SQLiteOpenHelper{
             }while(cursor.moveToNext());
         }
         else{
-           // failier. do not do anything  to the list.
+            // failier. do not do anything  to the list.
         }
         cursor.close();
         db.close();
