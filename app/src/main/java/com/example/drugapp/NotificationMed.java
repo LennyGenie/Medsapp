@@ -1,5 +1,9 @@
 package com.example.drugapp;
 
+
+
+
+
 import android.annotation.TargetApi;
 import android.app.AlarmManager;
 import android.app.NotificationChannel;
@@ -9,10 +13,10 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.os.Build;
-
 import androidx.core.app.NotificationCompat;
-
 import java.util.Calendar;
+
+import de.fhbielefeld.swe.medikamentenapp.R;
 
 public class NotificationMed extends ContextWrapper {
     public static final String channelID = "Erinnerung";
@@ -48,8 +52,8 @@ public class NotificationMed extends ContextWrapper {
     {
         return new NotificationCompat.Builder(getApplicationContext(), channelID)
                 .setContentTitle("Erinnerung!")
-                .setContentText("Sie müssen Ihre Medizin einnehmen!");
-                //.setSmallIcon(R.drawable.ic_stat_name);
+                .setContentText("Sie müssen Ihre Medizin einnehmen!")
+                .setSmallIcon(R.drawable.ic_stat_name);
     }
 
     public void setAlarm(int hour, int min)

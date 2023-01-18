@@ -1,15 +1,26 @@
 package com.example.drugapp;
 
+
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Build;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 
@@ -46,11 +57,11 @@ public class Database extends SQLiteOpenHelper
     private static final String COLUMN_ABENDS  = "Abends";
 
 
-     public Database(@Nullable Context context)
-     {
+    public Database(@Nullable Context context)
+    {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
-     }
+    }
 
     @Override
     public void onCreate(SQLiteDatabase db)
@@ -160,3 +171,4 @@ public class Database extends SQLiteOpenHelper
         db.execSQL("DELETE FROM " + TABLE_NAME);
     }
 }
+

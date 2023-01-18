@@ -1,6 +1,9 @@
 package com.example.drugapp;
 
 
+
+
+
 import android.content.Context;
 import android.os.Build;
 import android.view.LayoutInflater;
@@ -16,6 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+
+import de.fhbielefeld.swe.medikamentenapp.R;
 
 public class AdaptForNextToTake extends RecyclerView.Adapter<AdaptForNextToTake.MyViewHolder>
 {
@@ -40,11 +45,11 @@ public class AdaptForNextToTake extends RecyclerView.Adapter<AdaptForNextToTake.
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    public AdaptForNextToTake.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.row_for_next_to_take, parent, false);
-        return new MyViewHolder(view);
+        return new AdaptForNextToTake.MyViewHolder(view);
     }
 
     @Override

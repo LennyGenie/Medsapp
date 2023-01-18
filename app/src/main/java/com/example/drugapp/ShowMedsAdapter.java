@@ -1,7 +1,10 @@
 package com.example.drugapp;
 
+
+
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +14,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
+
+import de.fhbielefeld.swe.medikamentenapp.R;
 
 public class ShowMedsAdapter extends RecyclerView.Adapter<ShowMedsAdapter.MyViewHolder>
 {
@@ -30,14 +36,14 @@ public class ShowMedsAdapter extends RecyclerView.Adapter<ShowMedsAdapter.MyView
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ShowMedsAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.row_for_meds_taken, parent, false);
-        return new MyViewHolder(view);
+        return new ShowMedsAdapter.MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position)
+    public void onBindViewHolder(@NonNull ShowMedsAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position)
     {
         System.out.println("Im Show Adapert" + med_id + " " + taken_day + "Item Count" +
                 getItemCount());
@@ -73,3 +79,10 @@ public class ShowMedsAdapter extends RecyclerView.Adapter<ShowMedsAdapter.MyView
 
 
 }
+
+
+
+
+
+
+

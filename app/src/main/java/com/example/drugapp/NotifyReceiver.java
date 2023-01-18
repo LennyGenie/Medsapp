@@ -17,4 +17,3 @@ public class NotifyReceiver extends BroadcastReceiver
     }
 }
 
-

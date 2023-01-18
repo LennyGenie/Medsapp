@@ -1,5 +1,7 @@
 package com.example.drugapp;
 
+
+
 import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.time.LocalTime;
+
+import de.fhbielefeld.swe.medikamentenapp.R;
 
 public class AddMedicament extends AppCompatActivity
 {
