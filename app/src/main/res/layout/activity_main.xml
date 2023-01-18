@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#999999"
+    android:padding="10dp">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_float"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:contentDescription="Add Medicament"
+        app:backgroundTint="#6E7171"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/s_all_float"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:contentDescription="show all meds taken"
+        app:backgroundTint="#6E7171"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/s_next_float"
+        app:srcCompat="@android:drawable/ic_menu_info_details" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/s_next_float"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:contentDescription="show next med to take"
+        app:backgroundTint="#6E7171"
+        app:layout_constraintEnd_toStartOf="@+id/s_all_float"
+        app:layout_constraintTop_toTopOf="@+id/s_all_meds_float"
+        app:srcCompat="@android:drawable/ic_menu_recent_history" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/s_all_meds_float"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:contentDescription="Show all Meds"
+        app:backgroundTint="#6E7171"
+        app:layout_constraintEnd_toStartOf="@+id/s_next_float"
+        app:layout_constraintHorizontal_bias="0.171"
+        app:layout_constraintStart_toEndOf="@+id/add_float"
+        app:layout_constraintTop_toTopOf="@+id/add_float"
+        app:srcCompat="@android:drawable/ic_input_get" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="363dp"
+        android:layout_height="144dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/s_all_meds_float">
+
+        <TextView
+            android:id="@+id/menge_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Amount"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/med_name"
+            app:layout_constraintTop_toBottomOf="@+id/med_name" />
+
+        <TextView
+            android:id="@+id/med_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="med-name"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/nächsteEinnahme"
+            app:layout_constraintTop_toBottomOf="@+id/nächsteEinnahme" />
+
+        <TextView
+            android:id="@+id/nächsteEinnahme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="150dp"
+            android:text="naxt intake:"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.411"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/uhrzeit_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:text="time"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/menge_txt"
+            app:layout_constraintTop_toBottomOf="@+id/menge_txt" />
+
+        <Button
+            android:id="@+id/eingenommen_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="96dp"
+            android:backgroundTint="#4D000000"
+            android:foregroundTint="#00FFFFFF"
+            android:text="taked"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/uhrzeit_txt"
+            app:layout_constraintStart_toEndOf="@+id/nächsteEinnahme"
+            app:layout_constraintTop_toTopOf="@+id/med_name"
+            app:layout_constraintVertical_bias="0.575" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
