@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#999999"
+    android:padding="10dp">
+
+
+    <EditText
+        android:id="@+id/name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="med-name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/amount_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Amount"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_edit_text" />
+
+    <EditText
+        android:id="@+id/etHour"
+        android:layout_width="80dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="HH:MM"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amount_edit_text" />
+
+    <TextView
+        android:id="@+id/time_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="time"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/etHour"
+        app:layout_constraintEnd_toStartOf="@+id/etHour"
+        app:layout_constraintStart_toStartOf="@+id/amount_edit_text"
+        app:layout_constraintTop_toTopOf="@+id/etHour"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:backgroundTint="#33000000"
+        android:textColor="#FFFFFF"
+        android:text="save"
+        app:layout_constraintBottom_toBottomOf="@+id/clear_button"
+        app:layout_constraintStart_toEndOf="@+id/clear_button"
+        app:layout_constraintTop_toTopOf="@+id/clear_button" />
+
+    <Button
+        android:id="@+id/clear_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:backgroundTint="#33000000"
+        android:text="delete"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/edit_abends_btn2"
+        app:layout_constraintTop_toBottomOf="@+id/edit_abends_btn2" />
+
+    <RadioButton
+        android:id="@+id/morgens_btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:checked="false"
+        android:clickable="true"
+        android:text="morning"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/time_Text"
+        app:layout_constraintTop_toBottomOf="@+id/etHour" />
+
+    <RadioButton
+        android:id="@+id/edit_mittags_btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="#FFFFFF"
+        android:clickable="true"
+        android:text="noon"
+        app:layout_constraintStart_toStartOf="@+id/morgens_btn2"
+        app:layout_constraintTop_toBottomOf="@+id/morgens_btn2" />
+
+    <RadioButton
+        android:id="@+id/edit_abends_btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="#FFFFFF"
+        android:clickable="true"
+        android:text="evening"
+        app:layout_constraintStart_toStartOf="@+id/edit_mittags_btn2"
+        app:layout_constraintTop_toBottomOf="@+id/edit_mittags_btn2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
