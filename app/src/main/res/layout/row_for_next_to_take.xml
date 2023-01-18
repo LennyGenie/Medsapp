@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/row_to_take">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4D000000"
+        android:foregroundTint="#00FFFFFF"
+        android:layout_marginTop="12dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/medikament_nr_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="1"
+                android:textColor="#FFFFFF"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/med_name_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="2dp"
+                android:text="Medikament Name"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/medikament_nr_txt"
+                app:layout_constraintTop_toTopOf="@+id/medikament_nr_txt" />
+
+            <TextView
+                android:id="@+id/med_menge_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:textColor="#FFFFFF"
+                android:text="Medikament Menge"
+                app:layout_constraintBottom_toBottomOf="@+id/medikament_nr_txt"
+                app:layout_constraintStart_toEndOf="@+id/medikament_nr_txt"
+                app:layout_constraintTop_toBottomOf="@+id/med_name_txt" />
+
+            <TextView
+                android:id="@+id/med_uhrzeit_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Uhrzeit"
+                android:textColor="#FFFFFF"
+                app:layout_constraintStart_toStartOf="@+id/med_menge_txt"
+                app:layout_constraintTop_toBottomOf="@+id/med_menge_txt" />
+
+            <Button
+                android:id="@+id/speichern_btn"
+                android:layout_width="124dp"
+                android:layout_height="48dp"
+                android:backgroundTint="#00000000"
+                android:foregroundTint="#00FFFFFF"
+                android:text="Eingenommen"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/med_uhrzeit_txt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/med_name_txt" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
